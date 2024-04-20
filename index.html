@@ -3,51 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI/ML Ops Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets the font for the body */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            float: right;
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .content > div {
+            flex: 1; /* Each div takes equal width */
+            padding: 20px;
+            background: white;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Welcome to My Website</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
     </header>
-    <section id="home">
-        <h1>Welcome to AI/ML Ops Solutions</h1>
-        <p>Your partner in deploying and managing machine learning models efficiently.</p>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Model Deployment</li>
-            <li>Continuous Monitoring</li>
-            <li>Performance Optimization</li>
-            <li>Scale Management</li>
-        </ul>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a team of AI/ML experts dedicated to supporting your journey from model development to production, ensuring scalability and reliability.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+
+    <div class="container content">
+        <div>
+            <h2>Section One</h2>
+            <p>This is a paragraph of text to introduce the first section of your webpage. Describe what your site is about or what it does.</p>
+        </div>
+        <div>
+            <h2>Section Two</h2>
+            <p>This section can have more information, perhaps about different services or offerings.</p>
+        </div>
+    </div>
+
     <footer>
-        <p>© 2024 AI/ML Ops Solutions. All rights reserved.</p>
+        <p>Copyright © Your Company 2023</p>
     </footer>
 </body>
 </html>
