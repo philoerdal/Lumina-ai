@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets the font for the body */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            float: right;
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .content > div {
+            flex: 1; /* Each div takes equal width */
+            padding: 20px;
+            background: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to My Website</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container content">
+        <div>
+            <h2>Section One</h2>
+            <p>This is a paragraph of text to introduce the first section of your webpage. Describe what your site is about or what it does.</p>
+        </div>
+        <div>
+            <h2>Section Two</h2>
+            <p>This section can have more information, perhaps about different services or offerings.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © Your Company 2023</p>
+    </footer>
+</body>
+</html>
