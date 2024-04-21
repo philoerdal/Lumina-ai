@@ -11,16 +11,12 @@
         <h1>Car Charging Information Entry</h1>
         <form id="carChargingForm">
             <div class="form-group">
-                <label for="date">Enter Date:</label>
-                <input type="date" id="date" name="date" required>
+                <label for="startTime">Enter Start Time:</label>
+                <input type="datetime-local" id="startTime" name="startTime" required>
             </div>
             <div class="form-group">
-                <label for="startHour">Enter Start Hour:</label>
-                <select id="startHour" name="startHour" required></select>
-            </div>
-            <div class="form-group">
-                <label for="endHour">Enter End Hour:</label>
-                <select id="endHour" name="endHour" required></select>
+                <label for="endTime">Enter End Time:</label>
+                <input type="datetime-local" id="endTime" name="endTime" required>
             </div>
             <div class="form-group">
                 <label for="currentBattery">Current Battery State (kWh):</label>
