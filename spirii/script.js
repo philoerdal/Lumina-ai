@@ -14,6 +14,20 @@ function populateHourDropdowns() {
     }
 }
 
+function adjustDateTime(input) {
+    if (input.type === 'datetime-local' && input.value) {
+        input.value = input.value.slice(0, 13) + ':00'; // Keep only the date and hour
+    }
+}
+
+function validateEndTime() {
+    const startTime = document.getElementById('startTime').value;
+    const endTime = document.getElementById('endTime').value;
+    if (startTime && endTime && endTime <= startTime) {
+        document.getElementById('endTime').value = startTime; // Reset end time to start time if it's earlier
+    }
+}
+
 const form = document.getElementById('carChargingForm');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
