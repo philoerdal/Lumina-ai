@@ -3,14 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function populateHourDropdowns() {
-    const startHourSelect = document.getElementById('startHour');
-    const endHourSelect = document.getElementById('endHour');
     for (let i = 0; i < 24; i++) {
         const option = document.createElement('option');
         option.value = i;
         option.textContent = `${i}:00`;
-        startHourSelect.appendChild(option.cloneNode(true));
-        endHourSelect.appendChild(option);
     }
 }
 
@@ -45,7 +41,7 @@ function submitData() {
     const jsonPayload = {};
     formData.forEach((value, key) => jsonPayload[key] = value);
 
-    // Optional: Adjust date and time formatting or other preprocessing
+    // Optional: Adjust date and time formatting or other preprocessingEr
     // For example, ensure dates are in ISO format if necessary
 
     console.log('JSON Payload:', jsonPayload);
