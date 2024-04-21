@@ -43,7 +43,7 @@ function submitData() {
     console.log('JSON Payload:', jsonPayload);
 
     // Replace with your actual API endpoint
-    const apiEndpoint = 'https://your-api-url.com/submit';
+    const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
     fetch(apiEndpoint, {
         method: 'POST',
