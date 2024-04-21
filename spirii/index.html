@@ -10,24 +10,30 @@
     <div class="container">
         <h1>Car Charging Information Entry</h1>
         <form id="carChargingForm">
-            <label for="date">Enter Date:</label>
-            <input type="date" id="date" name="date" required><br>
-
-            <label for="startHour">Enter Start Hour:</label>
-            <select id="startHour" name="startHour" required></select><br>
-
-            <label for="endHour">Enter End Hour:</label>
-            <select id="endHour" name="endHour" required></select><br>
-
-            <label for="currentBattery">Current Battery State (kWh):</label>
-            <input type="number" id="currentBattery" name="currentBattery" step="0.1" required><br>
-
-            <label for="maxCapacity">Battery Max Capacity (kWh):</label>
-            <input type="number" id="maxCapacity" name="maxCapacity" step="0.1" required><br>
-
-            <label for="maxChargeRate">Max Charge Rate per Hour (kWh):</label>
-            <input type="number" id="maxChargeRate" name="maxChargeRate" step="0.1" required><br>
-
+            <div class="form-group">
+                <label for="date">Enter Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="startHour">Enter Start Hour:</label>
+                <select id="startHour" name="startHour" required></select>
+            </div>
+            <div class="form-group">
+                <label for="endHour">Enter End Hour:</label>
+                <select id="endHour" name="endHour" required></select>
+            </div>
+            <div class="form-group">
+                <label for="currentBattery">Current Battery State (kWh):</label>
+                <input type="number" id="currentBattery" name="currentBattery" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="maxCapacity">Battery Max Capacity (kWh):</label>
+                <input type="number" id="maxCapacity" name="maxCapacity" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="maxChargeRate">Max Charge Rate per Hour (kWh):</label>
+                <input type="number" id="maxChargeRate" name="maxChargeRate" step="0.1" required>
+            </div>
             <button type="submit">Submit Data</button>
         </form>
     </div>

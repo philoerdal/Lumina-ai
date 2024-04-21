@@ -3,49 +3,52 @@ body {
     padding: 20px;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
     background-color: white;
-    padding: 20px; 
+    padding: 30px; 
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 40px auto;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.form-group {
+    margin-bottom: 20px;
 }
 
 input[type="number"], input[type="date"], select {
     padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    transition: border-color 0.3s;
+    transition: border 0.3s ease-in-out;
 }
 
 input[type="number"]:focus, input[type="date"]:focus, select:focus {
-    border-color: #0056b3;
+    border: 2px solid #0056b3;
 }
 
 label {
+    display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 button {
-    padding: 12px;
-    background-color: #28a745;
+    padding: 12px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
