@@ -63,10 +63,10 @@ button:hover {
     position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%); /* Adjusted for better vertical alignment */
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translate(-50%, -60%) rotate(0deg); }
+    100% { transform: translate(-50%, -60%) rotate(360deg); }
 }
