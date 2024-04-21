@@ -51,7 +51,7 @@ function submitData() {
     console.log('JSON Payload:', jsonPayload);
 
     // Endpoint URL where the form data needs to be submitted
-    const apiEndpoint = 'https://your-api-url.com/submit';
+    const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
     // Fetch API to send the data
     fetch(apiEndpoint, {
