@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="endTime">Enter End Time:</label>
-                <input type="datetime-local" id="endTime" name="endTime" required oninput="validateEndTime()">
+                <input type="datetime-local" id="endTime" name="endTime" required oninput="validateEndTime()" required oninput="adjustDateTime(this)">
             </div>
             <div class="form-group">
                 <label for="currentBattery">Current Battery State (kWh):</label>
