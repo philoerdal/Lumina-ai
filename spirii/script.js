@@ -21,10 +21,15 @@ function adjustDateTime(input) {
 }
 
 function validateEndTime() {
-    const startTime = document.getElementById('startTime').value;
-    const endTime = document.getElementById('endTime').value;
-    if (startTime && endTime && endTime <= startTime) {
-        document.getElementById('endTime').value = startTime; // Reset end time to start time if it's earlier
+    const startTimeInput = document.getElementById('startTime');
+    const endTimeInput = document.getElementById('endTime');
+    if (startTimeInput.value && endTimeInput.value) {
+        let startTime = new Date(startTimeInput.value);
+        let endTime = new Date(endTimeInput.value);
+        if (endTime <= startTime) {
+            endTimeInput.value = ''; 
+        }
+        endTimeInput.min = startTime.toISOString().slice(0, 16); 
     }
 }
 
