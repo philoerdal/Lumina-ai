@@ -13,10 +13,14 @@
             <div class="form-group">
                 <label for="startTime">Enter Start Time:</label>
                 <input type="datetime-local" id="startTime" name="startTime" required oninput="adjustDateTime(this)">
+                <label for="startHour">Start Hour:</label>
+                <select id="startHour"></select> <!-- Added this line -->
             </div>
             <div class="form-group">
                 <label for="endTime">Enter End Time:</label>
                 <input type="datetime-local" id="endTime" name="endTime" required oninput="validateEndTime()">
+                <label for="endHour">End Hour:</label>
+                <select id="endHour"></select> <!-- Added this line -->
             </div>
             <div class="form-group">
                 <label for="currentBattery">Current Battery State (kWh):</label>
