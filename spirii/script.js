@@ -41,10 +41,9 @@ function submitData() {
     formData.forEach((value, key) => jsonPayload[key] = value);
 
     console.log('JSON Payload:', jsonPayload);
-
     document.getElementById('spinner').style.display = 'block'; // Show spinner
+    document.getElementById('carChargingForm').style.display = 'none'; // Hide form
 
-    // Replace with your actual API endpoint
     const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
     fetch(apiEndpoint, {
@@ -58,18 +57,17 @@ function submitData() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.text(); // Use text() first to see what you received that isn't JSON
+        return response.json(); // Assuming the response is in JSON format
     })
     .then(data => {
-        try {
-            const jsonData = JSON.parse(data); // Try parsing as JSON
-            console.log('Success:', jsonData);
-        } catch (e) {
-            console.error("Data received was not valid JSON:", data);
-        }
+        console.log('Success:', data);
+        document.getElementById('responseData').textContent = JSON.stringify(data, null, 2); // Format JSON data
+        document.getElementById('responseArea').style.display = 'block'; // Show response area
     })
     .catch((error) => {
         console.error('Error:', error);
+        document.getElementById('responseData').textContent = 'Failed to retrieve data: ' + error.message;
+        document.getElementById('responseArea').style.display = 'block'; // Show error in response area
     })
     .finally(() => {
         document.getElementById('spinner').style.display = 'none'; // Hide spinner
