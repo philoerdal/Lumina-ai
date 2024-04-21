@@ -43,6 +43,7 @@ function submitData() {
     console.log('JSON Payload:', jsonPayload);
     document.getElementById('spinner').style.display = 'block'; // Show spinner
     document.getElementById('carChargingForm').style.display = 'none'; // Hide form
+    document.getElementById('formContainer').style.display = 'none'; // Hide form container
 
     const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
