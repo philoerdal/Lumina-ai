@@ -41,6 +41,33 @@ form.addEventListener('submit', function(event) {
 
 function submitData() {
     const formData = new FormData(form);
-    console.log('Form Data:', Object.fromEntries(formData.entries()));
-    // Implement submission logic here, e.g., sending data to a server
+    // Creating a JSON object from FormData
+    const jsonPayload = {};
+    formData.forEach((value, key) => jsonPayload[key] = value);
+
+    // Optional: Adjust date and time formatting or other preprocessing
+    // For example, ensure dates are in ISO format if necessary
+
+    console.log('JSON Payload:', jsonPayload);
+
+    // Endpoint URL where the form data needs to be submitted
+    const apiEndpoint = 'https://your-api-url.com/submit';
+
+    // Fetch API to send the data
+    fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonPayload)
+    })
+    .then(response => response.json())  // Assuming the server responds with JSON
+    .then(data => {
+        console.log('Success:', data);
+        // Handle success, e.g., show a success message or redirect
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Handle errors, e.g., show an error message
+    });
 }
