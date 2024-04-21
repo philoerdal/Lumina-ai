@@ -42,6 +42,8 @@ function submitData() {
 
     console.log('JSON Payload:', jsonPayload);
 
+    document.getElementById('spinner').style.display = 'block'; // Show spinner
+
     // Replace with your actual API endpoint
     const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
@@ -68,5 +70,8 @@ function submitData() {
     })
     .catch((error) => {
         console.error('Error:', error);
+    })
+    .finally(() => {
+        document.getElementById('spinner').style.display = 'none'; // Hide spinner
     });
 }
