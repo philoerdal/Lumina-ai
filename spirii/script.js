@@ -37,19 +37,14 @@ form.addEventListener('submit', function(event) {
 
 function submitData() {
     const formData = new FormData(form);
-    // Creating a JSON object from FormData
     const jsonPayload = {};
     formData.forEach((value, key) => jsonPayload[key] = value);
 
-    // Optional: Adjust date and time formatting or other preprocessingEr
-    // For example, ensure dates are in ISO format if necessary
-
     console.log('JSON Payload:', jsonPayload);
 
-    // Endpoint URL where the form data needs to be submitted
-    const apiEndpoint = 'https://spirii.free.beeceptor.com';
+    // Replace with your actual API endpoint
+    const apiEndpoint = 'https://your-api-url.com/submit';
 
-    // Fetch API to send the data
     fetch(apiEndpoint, {
         method: 'POST',
         headers: {
@@ -57,13 +52,21 @@ function submitData() {
         },
         body: JSON.stringify(jsonPayload)
     })
-    .then(response => response.json())  // Assuming the server responds with JSON
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text(); // Use text() first to see what you received that isn't JSON
+    })
     .then(data => {
-        console.log('Success:', data);
-        // Handle success, e.g., show a success message or redirect
+        try {
+            const jsonData = JSON.parse(data); // Try parsing as JSON
+            console.log('Success:', jsonData);
+        } catch (e) {
+            console.error("Data received was not valid JSON:", data);
+        }
     })
     .catch((error) => {
         console.error('Error:', error);
-        // Handle errors, e.g., show an error message
     });
 }
