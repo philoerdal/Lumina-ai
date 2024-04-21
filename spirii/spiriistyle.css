@@ -20,7 +20,7 @@ body {
     margin-bottom: 20px;
 }
 
-input[type="datetime-local"] {
+input[type="number"], input[type="date"], select, input[type="datetime-local"] {
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -29,20 +29,7 @@ input[type="datetime-local"] {
     transition: border 0.3s ease-in-out;
 }
 
-input[type="datetime-local"]:focus {
-    border: 2px solid #0056b3;
-}
-
-input[type="number"], input[type="date"], select {
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border 0.3s ease-in-out;
-}
-
-input[type="number"]:focus, input[type="date"]:focus, select:focus {
+input[type="number"]:focus, input[type="date"]:focus, select:focus, input[type="datetime-local"]:focus {
     border: 2px solid #0056b3;
 }
 
