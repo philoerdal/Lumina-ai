@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     populateHourDropdowns();
 });
 
+function populateHourDropdowns() {
+    for (let i = 0; i < 24; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = `${i}:00`;
+    }
+}
+
 function adjustDateTime(input) {
     if (input.type === 'datetime-local' && input.value) {
         input.value = input.value.slice(0, 13) + ':00'; // Keep only the date and hour
