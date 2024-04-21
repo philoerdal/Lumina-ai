@@ -1,16 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 .container {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
 form {
@@ -18,26 +20,32 @@ form {
     flex-direction: column;
 }
 
-input[type="number"], input[type="date"] {
-    padding: 8px;
+input[type="number"], input[type="date"], select {
+    padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #0056b3;
 }
 
 label {
-    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 button {
-    padding: 10px;
-    background-color: #007BFF;
+    padding: 12px;
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #218838;
 }
