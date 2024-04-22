@@ -63,9 +63,9 @@ function submitData() {
     })
     .then(data => {
         console.log('Success:', data);
+        document.getElementById('grid-container').style.display = 'block'; 
         const jsonResponse = JSON.stringify(data.json_response, null, 2); // Format the 'json_response' part of JSON data
         document.getElementById('responseData').textContent = jsonResponse; // Display formatted 'json_response' in 'responseData' element
-        document.getElementById('grid-container').style.display = 'block'; 
         // Plotting the price comparison graph
         const priceTrace1 = {
             x: data.hour_array, 
@@ -152,3 +152,4 @@ function submitData() {
         document.getElementById('spinner').style.display = 'none'; // Hide spinner
     });
 }
+
