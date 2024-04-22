@@ -42,13 +42,17 @@
         #grid-container > div {
             height: 500px; /* Set a specific height */
             width: 100%; /* Set width to 100% to fill the grid cell */
+            padding: 20px; 
+            margin-top: 20px; 
+            background-color: #f9f9f9; 
+            border-radius: 8px;
         }
     </style>
     <div id="grid-container">
         <div id="plotArea1"></div> <!-- Container for the plot -->
         <div id="plotArea2"></div> <!-- Container for the plot -->
         <div id="plotArea3"></div> <!-- Area for the new bar plot -->
-        <div id="responseArea" style="padding: 20px; margin-top: 20px; background-color: #f9f9f9; border-radius: 8px;">
+        <div id="responseArea">
             <p id="responseData"></p>
         </div>
     </div>
