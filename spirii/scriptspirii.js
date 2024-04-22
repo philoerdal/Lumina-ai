@@ -30,6 +30,7 @@ function validateEndTime() {
 }
 
 const form = document.getElementById('carChargingForm');
+document.getElementById('gridContainer').style.display = 'none';
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     submitData();
@@ -63,6 +64,7 @@ function submitData() {
     .then(data => {
         console.log('Success:', data);
         const jsonResponse = JSON.stringify(data.json_response, null, 2); // Format the 'json_response' part of JSON data
+        document.getElementById('gridContainer').style.display = 'block';
         document.getElementById('responseData').textContent = jsonResponse; // Display formatted 'json_response' in 'responseData' element
         document.getElementById('responseArea').style.display = 'block'; // Make sure 'responseArea' is visible
         // Plotting the price comparison graph
