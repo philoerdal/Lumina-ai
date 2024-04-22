@@ -86,7 +86,7 @@ function submitData() {
 
         const priceLayout = {
             title: 'Price Comparison',
-            xaxis: { title: 'Hour' },
+            xaxis: { title: 'Hour', type: 'category' },
             yaxis: { title: 'Price' }
         };
 
@@ -113,7 +113,7 @@ function submitData() {
 
         const planLayout = {
             title: 'Plan Comparison',
-            xaxis: { title: 'Hour' },
+            xaxis: { title: 'Hour', type: 'category' },
             yaxis: { title: 'kWh' }
         };
 
