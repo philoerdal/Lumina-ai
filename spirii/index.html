@@ -40,21 +40,21 @@
             grid-gap: 10px; /* Adds a gap between grid items */
         }
         #grid-container > div {
-            height: 200px; /* Set a specific height */
-            width: 100%; /* Set width to 100% to fill the grid cell */
+            height: 500px; 
+            width: 100%; 
         }
     </style>
     <div id="grid-container">
         <div id="plotArea1"></div> <!-- Container for the plot -->
         <div id="plotArea2"></div> <!-- Container for the plot -->
         <div id="plotArea3"></div> <!-- Area for the new bar plot -->
-        <div id="responseArea" style="padding: 20px; margin-top: 20px; background-color: #f9f9f9; border-radius: 8px;">
+        <div id="responseArea">
             <p id="responseData"></p>
         </div>
     </div>
     <div id="spinner" style="display: none;">
         <div class="loader"></div>
-        <p id="spinnerText" style="text-align: center; font-size: 35px; color: #1a73e7; margin-top: 45px;">Scheduling optimized charging plan</p>
+        <p id="spinnerText" style="text-align: center; font-size: 35px; color: #1a73e7; margin-top: 35px;">Scheduling optimized charging plan</p>
     </div>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="spirii/scriptspirii.js"></script>
