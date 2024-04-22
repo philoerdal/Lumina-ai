@@ -62,9 +62,9 @@ function submitData() {
     })
     .then(data => {
         console.log('Success:', data);
-        document.getElementById('responseData').textContent = JSON.stringify(data, null, 2); // Format JSON data
-        document.getElementById('responseArea').style.display = 'block'; // Show response area
-        
+        const jsonResponse = JSON.stringify(data.json_response, null, 2); // Format the 'json_response' part of JSON data
+        document.getElementById('responseData').textContent = jsonResponse; // Display formatted 'json_response' in 'responseData' element
+        document.getElementById('responseArea').style.display = 'block'; // Make sure 'responseArea' is visible
         // Plotting the price comparison graph
         const priceTrace1 = {
             x: data.hour_array, 
@@ -123,18 +123,20 @@ function submitData() {
             x: ['Optimized Total Cost', 'Linear Total Cost'],
             y: [data.optimized_total_cost, data.linear_total_cost],
             type: 'bar',
+            text: [data.optimized_total_cost, data.linear_total_cost], 
+            textposition: 'auto', 
             marker: {
                 color: ['orange', 'green']
             }
         };
-
+        
         const costLayout = {
             title: 'Cost Comparison',
             xaxis: { title: 'Method' },
             yaxis: { title: 'Total Cost' },
             margin: { t: 30 }
         };
-
+        
         Plotly.newPlot('plotArea3', [costTrace], costLayout);
 
         //document.getElementById('responseText').innerHTML = `<strong>Server Response:</strong> ${data.json_response}`;
