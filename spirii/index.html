@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Charging Information</title>
+    <link rel="stylesheet" href="spirii/stylespirii.css">
+</head>
+<body>
+    <div class="container" id="formContainer">
+        <h1>Car Charging Information Entry</h1>
+        <form id="carChargingForm">
+            <div class="form-group">
+                <label for="startTime">Enter Start Time:</label>
+                <input type="datetime-local" id="startTime" name="startTime" required oninput="adjustDateTime(this)">
+            </div>
+            <div class="form-group">
+                <label for="endTime">Enter End Time:</label>
+                <input type="datetime-local" id="endTime" name="endTime" required oninput="adjustDateTime(this); validateEndTime();">
+            </div>
+            <div class="form-group">
+                <label for="currentBattery">Current Battery State (kWh):</label>
+                <input type="number" id="currentBattery" name="currentBattery" step="1" required>
+            </div>
+            <div class="form-group">
+                <label for="maxCapacity">Battery Max Capacity (kWh):</label>
+                <input type="number" id="maxCapacity" name="maxCapacity" step="1" required>
+            </div>
+            <div class="form-group">
+                <label for="maxChargeRate">Max Charge Rate per Hour (kWh):</label>
+                <input type="number" id="maxChargeRate" name="maxChargeRate" step="1" required>
+            </div>
+            <button type="submit">Submit Data</button>
+        </form>
+    </div>
+    <style>
+        #grid-container {
+            display: none;
+            grid-template-columns: 1fr 1fr; 
+            grid-gap: 5px;
+        }
+        #grid-container > div {
+            height: 500px; 
+            width: 90; 
+            padding: 20px; 
+            margin-top: 20px; 
+            background-color: #f9f9f9; 
+            border-radius: 8px;
+        }
+    </style>
+    <div id="grid-container">
+        <div id="plotArea1"></div> <!-- Container for the plot -->
+        <div id="plotArea2"></div> <!-- Container for the plot -->
+        <div id="plotArea3"></div> <!-- Area for the new bar plot -->
+        <div id="responseArea">
+            <p id="responseData"></p>
+        </div>
+    </div>
+    <div id="spinner" style="display: none;">
+        <div class="loader"></div>
+        <p id="spinnerText" style="text-align: center; font-size: 35px; color: #1a73e7; margin-top: 45px;">Scheduling optimized charging plan</p>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="spirii/scriptspirii.js"></script>
+</body>
+</html>
