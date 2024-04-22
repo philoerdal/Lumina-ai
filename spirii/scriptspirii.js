@@ -67,7 +67,7 @@ function submitData() {
         
         // Plotting the price comparison graph
         const priceTrace1 = {
-            x: Array.from({length: data.Actual_prices.length}, (_, i) => i + 1), // Create an array [1, 2, ..., n]
+            x: Array.from({length: data.Actual_prices.length}, (_, i) => i + 1), 
             y: data.Actual_prices,
             type: 'scatter',
             mode: 'lines+markers',
@@ -117,7 +117,7 @@ function submitData() {
             yaxis: { title: 'Plan Value' }
         };
 
-        Plotly.newPlot('plotArea2', [planTrace1, planTrace2], planLayout); // Ensure you have a div with id="plotArea2" for this plot
+        Plotly.newPlot('plotArea2', [planTrace1, planTrace2], planLayout); 
 
     })
     .catch((error) => {
