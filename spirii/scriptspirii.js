@@ -67,7 +67,7 @@ function submitData() {
         
         // Plotting the price comparison graph
         const priceTrace1 = {
-            x: Array.from({length: data.Actual_prices.length}, (_, i) => i + 1), 
+            x: data.hour_array, 
             y: data.Actual_prices,
             type: 'scatter',
             mode: 'lines+markers',
@@ -76,7 +76,7 @@ function submitData() {
         };
         
         const priceTrace2 = {
-            x: Array.from({length: data.Predicted_prices.length}, (_, i) => i + 1),
+            x: data.hour_array,
             y: data.Predicted_prices,
             type: 'scatter',
             mode: 'lines+markers',
@@ -86,15 +86,15 @@ function submitData() {
 
         const priceLayout = {
             title: 'Price Comparison',
-            xaxis: { title: 'Time Point' },
-            yaxis: { title: 'Price ($)' }
+            xaxis: { title: 'Hour' },
+            yaxis: { title: 'Price' }
         };
 
         Plotly.newPlot('plotArea', [priceTrace1, priceTrace2], priceLayout);
 
         // Plotting the plan comparison graph
         const planTrace1 = {
-            x: Array.from({length: data.Linear_plan.length}, (_, i) => i + 1),
+            x: data.hour_array,
             y: data.Linear_plan,
             type: 'scatter',
             mode: 'lines+markers',
@@ -103,7 +103,7 @@ function submitData() {
         };
         
         const planTrace2 = {
-            x: Array.from({length: data.Optimized_plan.length}, (_, i) => i + 1),
+            x: data.hour_array,
             y: data.Optimized_plan,
             type: 'scatter',
             mode: 'lines+markers',
@@ -113,8 +113,8 @@ function submitData() {
 
         const planLayout = {
             title: 'Plan Comparison',
-            xaxis: { title: 'Time Point' },
-            yaxis: { title: 'Plan Value' }
+            xaxis: { title: 'Hour' },
+            yaxis: { title: 'kWh' }
         };
 
         Plotly.newPlot('plotArea2', [planTrace1, planTrace2], planLayout); 
