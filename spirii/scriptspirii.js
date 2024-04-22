@@ -30,6 +30,9 @@ function validateEndTime() {
 }
 
 const form = document.getElementById('carChargingForm');
+document.getElementById('plotArea1').style.display = 'none';
+document.getElementById('plotArea2').style.display = 'none';
+document.getElementById('plotArea3').style.display = 'none';
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     submitData();
@@ -44,9 +47,6 @@ function submitData() {
     document.getElementById('spinner').style.display = 'block'; // Show spinner
     document.getElementById('carChargingForm').style.display = 'none'; // Hide form
     document.getElementById('formContainer').style.display = 'none'; // Hide form container
-    document.getElementById('plotArea1').style.display = 'none';
-    document.getElementById('plotArea2').style.display = 'none';
-    document.getElementById('plotArea3').style.display = 'none';
 
     const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
