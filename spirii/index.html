@@ -33,15 +33,24 @@
             <button type="submit">Submit Data</button>
         </form>
     </div>
-    <div id="plotArea1"></div> <!-- Container for the plot -->
-    <div id="plotArea2"></div> <!-- Container for the plot -->
-    <div id="plotArea3"></div> <!-- Area for the new bar plot -->
+    <style>
+        #grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+            grid-gap: 10px; /* Adds a gap between grid items */
+        }
+    </style>
+    <div id="grid-container">
+        <div id="plotArea1"></div> <!-- Container for the plot -->
+        <div id="plotArea2"></div> <!-- Container for the plot -->
+        <div id="plotArea3"></div> <!-- Area for the new bar plot -->
+        <div id="responseArea" style="padding: 20px; margin-top: 20px; background-color: #f9f9f9; border-radius: 8px;">
+            <p id="responseData"></p>
+        </div>
+    </div>
     <div id="spinner" style="display: none;">
         <div class="loader"></div>
         <p id="spinnerText" style="text-align: center; font-size: 35px; color: #1a73e7; margin-top: 45px;">Scheduling optimized charging plan</p>
-    </div>
-    <div id="responseArea" style="display: none; padding: 20px; margin-top: 20px; background-color: #f9f9f9; border-radius: 8px;">
-        <p id="responseData"></p>
     </div>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="spirii/scriptspirii.js"></script>
