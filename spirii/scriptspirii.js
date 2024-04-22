@@ -45,7 +45,7 @@ function submitData() {
     const apiEndpoint = 'https://luminaspiriiapp.azurewebsites.net/api/predict_price_api?';
 
     fetch(apiEndpoint, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
