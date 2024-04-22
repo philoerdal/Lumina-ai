@@ -129,7 +129,7 @@ function submitData() {
     document.getElementById('carChargingForm').style.display = 'none'; // Hide form
     document.getElementById('formContainer').style.display = 'none'; // Hide form container
 
-    const apiEndpoint = 'https://luminaspiriiapp.azurewebsites.net/api/predict_price_api';
+    const apiEndpoint = 'https://luminaspiriiapp.azurewebsites.net/api/predict_prices_API?';
 
     fetch(`${apiEndpoint}?${searchParams}`, {
         method: 'GET'
