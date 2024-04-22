@@ -42,7 +42,7 @@ function submitData() {
     document.getElementById('carChargingForm').style.display = 'none'; // Hide form
     document.getElementById('formContainer').style.display = 'none'; // Hide form container
 
-    const apiEndpoint = 'https://spirii.free.beeceptor.com';
+    const apiEndpoint = 'https://luminaspiriiapp.azurewebsites.net/api/predict_price_api?';
 
     fetch(apiEndpoint, {
         method: 'POST',
