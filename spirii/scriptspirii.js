@@ -118,8 +118,6 @@ function displayResponse(data) {
 
 
 
-
-
 function submitData() {
     const formData = new FormData(form);
     const searchParams = new URLSearchParams();
