@@ -30,6 +30,7 @@ function validateEndTime() {
 }
 
 const form = document.getElementById('carChargingForm');
+document.getElementById('responseArea').style.display = 'none';
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     submitData();
