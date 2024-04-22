@@ -137,7 +137,7 @@ function submitData() {
 
         Plotly.newPlot('plotArea3', [costTrace], costLayout);
 
-        document.getElementById('responseText').innerHTML = `<strong>Server Response:</strong> ${data.json_response}`;
+        //document.getElementById('responseText').innerHTML = `<strong>Server Response:</strong> ${data.json_response}`;
 
     })
     .catch((error) => {
