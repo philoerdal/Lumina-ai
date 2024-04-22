@@ -33,7 +33,7 @@ form.addEventListener('submit', function(event) {
 });
 
 function submitData() {
-    const formData = new FormData(form);
+    const formData = new FormData(form); 
     const jsonPayload = {};
     formData.forEach((value, key) => jsonPayload[key] = value);
 
