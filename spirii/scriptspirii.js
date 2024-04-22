@@ -90,7 +90,7 @@ function submitData() {
             yaxis: { title: 'Price' }
         };
 
-        Plotly.newPlot('plotArea', [priceTrace1, priceTrace2], priceLayout);
+        Plotly.newPlot('plotArea1', [priceTrace1, priceTrace2], priceLayout);
 
         // Plotting the plan comparison graph
         const planTrace1 = {
@@ -118,6 +118,26 @@ function submitData() {
         };
 
         Plotly.newPlot('plotArea2', [planTrace1, planTrace2], planLayout); 
+
+        const costTrace = {
+            x: ['Optimized Total Cost', 'Linear Total Cost'],
+            y: [data.optimized_total_cost, data.linear_total_cost],
+            type: 'bar',
+            marker: {
+                color: ['orange', 'green']
+            }
+        };
+
+        const costLayout = {
+            title: 'Cost Comparison',
+            xaxis: { title: 'Method' },
+            yaxis: { title: 'Total Cost' },
+            margin: { t: 30 }
+        };
+
+        Plotly.newPlot('plotArea3', [costTrace], costLayout);
+
+        document.getElementById('responseText').innerHTML = `<strong>Server Response:</strong> ${data.json_response}`;
 
     })
     .catch((error) => {
