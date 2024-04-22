@@ -78,6 +78,7 @@ button:hover {
 
 
 
+
 /* Plot container styling */
 .plot-container {
     display: flex;
@@ -87,8 +88,8 @@ button:hover {
 }
 
 .plot {
-    width: 32%; /* Adjust based on the total width of the container */
-    height: 400px; /* Fixed height for plots */
+    width: 85%; /* Adjust based on the total width of the container */
+    height: 600px; /* Fixed height for plots */
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -111,7 +112,7 @@ button:hover {
 .container, .plot-container, .response-area {
     width: 90%;
     max-width: 600px;
-    margin: 40px auto;
+    margin: 40px auto;  
 }
 
 /* Responsive adjustments for smaller screens */
