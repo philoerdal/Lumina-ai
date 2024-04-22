@@ -131,7 +131,7 @@ function submitData() {
 
     const apiEndpoint = 'https://luminaspiriiapp.azurewebsites.net/api/predict_prices_API?';
 
-    fetch(`${apiEndpoint}?${searchParams}`, {
+    fetch(`${apiEndpoint}${searchParams}`, {
         method: 'GET'
     })
     .then(response => {
