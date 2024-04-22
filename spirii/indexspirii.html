@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Charging Information</title>
-    <link rel="stylesheet" href="spirii/stylespirii.css">
+    <link rel="stylesheet" href="spirii/spiriistyle.css">
 </head>
 <body>
     <div class="container" id="formContainer">
@@ -33,6 +33,7 @@
             <button type="submit">Submit Data</button>
         </form>
     </div>
+    <div id="plotArea" style="width:100%;height:500px;"></div> <!-- Container for the plot -->
     <div id="spinner" style="display: none;">
         <div class="loader"></div>
         <p id="spinnerText" style="text-align: center; font-size: 35px; color: #1a73e7; margin-top: 65px;">Scheduling optimized charging plan</p>
@@ -41,6 +42,7 @@
         <h2>Response:</h2>
         <p id="responseData"></p>
     </div>
-    <script src="spirii/scriptspirii.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="spirii/script.js"></script>
 </body>
 </html>

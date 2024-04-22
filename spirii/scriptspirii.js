@@ -64,6 +64,61 @@ function submitData() {
         console.log('Success:', data);
         document.getElementById('responseData').textContent = JSON.stringify(data, null, 2); // Format JSON data
         document.getElementById('responseArea').style.display = 'block'; // Show response area
+        
+        // Plotting the price comparison graph
+        const priceTrace1 = {
+            x: Array.from({length: data.Actual_prices.length}, (_, i) => i + 1), // Create an array [1, 2, ..., n]
+            y: data.Actual_prices,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Actual Prices',
+            marker: {color: 'red'}
+        };
+        
+        const priceTrace2 = {
+            x: Array.from({length: data.Predicted_prices.length}, (_, i) => i + 1),
+            y: data.Predicted_prices,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Predicted Prices',
+            marker: {color: 'blue'}
+        };
+
+        const priceLayout = {
+            title: 'Price Comparison',
+            xaxis: { title: 'Time Point' },
+            yaxis: { title: 'Price ($)' }
+        };
+
+        Plotly.newPlot('plotArea', [priceTrace1, priceTrace2], priceLayout);
+
+        // Plotting the plan comparison graph
+        const planTrace1 = {
+            x: Array.from({length: data.Linear_plan.length}, (_, i) => i + 1),
+            y: data.Linear_plan,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Linear Plan',
+            marker: {color: 'green'}
+        };
+        
+        const planTrace2 = {
+            x: Array.from({length: data.Optimized_plan.length}, (_, i) => i + 1),
+            y: data.Optimized_plan,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Optimized Plan',
+            marker: {color: 'orange'}
+        };
+
+        const planLayout = {
+            title: 'Plan Comparison',
+            xaxis: { title: 'Time Point' },
+            yaxis: { title: 'Plan Value' }
+        };
+
+        Plotly.newPlot('plotArea2', [planTrace1, planTrace2], planLayout); // Ensure you have a div with id="plotArea2" for this plot
+
     })
     .catch((error) => {
         console.error('Error:', error);
