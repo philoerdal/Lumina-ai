@@ -12,8 +12,8 @@ function populateHourDropdowns() {
 
 function adjustDateTime(input) {
     if (input.type === 'datetime-local' && input.value) {
-        input.value = input.value.slice(0, 13) + ':00'; // Keep only the date and hour
-    }
+        input.value = input.value.slice(0, 13) + ':00' + '00'; // Keep only the date and hour
+    } 
 }
 
 function validateEndTime() {
