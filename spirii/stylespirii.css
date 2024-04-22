@@ -71,6 +71,13 @@ button:hover {
     100% { transform: translate(-50%, -60%) rotate(360deg); }
 }
 
+
+
+
+
+
+
+
 /* Plot container styling */
 .plot-container {
     display: flex;

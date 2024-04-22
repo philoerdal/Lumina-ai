@@ -44,6 +44,9 @@ function submitData() {
     document.getElementById('spinner').style.display = 'block'; // Show spinner
     document.getElementById('carChargingForm').style.display = 'none'; // Hide form
     document.getElementById('formContainer').style.display = 'none'; // Hide form container
+    document.getElementById('plotArea1').style.display = 'none';
+    document.getElementById('plotArea2').style.display = 'none';
+    document.getElementById('plotArea3').style.display = 'none';
 
     const apiEndpoint = 'https://spirii.free.beeceptor.com';
 
@@ -63,6 +66,9 @@ function submitData() {
     .then(data => {
         console.log('Success:', data);
         const jsonResponse = JSON.stringify(data.json_response, null, 2); // Format the 'json_response' part of JSON data
+        document.getElementById('plotArea1').style.display = 'block';
+        document.getElementById('plotArea2').style.display = 'block';
+        document.getElementById('plotArea3').style.display = 'block';
         document.getElementById('responseData').textContent = jsonResponse; // Display formatted 'json_response' in 'responseData' element
         document.getElementById('responseArea').style.display = 'block'; // Make sure 'responseArea' is visible
         // Plotting the price comparison graph
