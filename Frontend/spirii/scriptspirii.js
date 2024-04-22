@@ -33,7 +33,7 @@ form.addEventListener('submit', function(event) {
 });
 
 function submitData() {
-    const formData = new FormData(form); 
+    const formData = new FormData(form);
     const jsonPayload = {};
     formData.forEach((value, key) => jsonPayload[key] = value);
 
@@ -45,7 +45,7 @@ function submitData() {
     const apiEndpoint = 'https://luminaspiriiapp.azurewebsites.net/api/predict_price_api?';
 
     fetch(apiEndpoint, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
