@@ -35,14 +35,17 @@ form.addEventListener('submit', function(event) {
 
 function displayResponse(data) {
     console.log('Success:', data);
-    document.getElementById('grid-container').style.display = 'grid'; // Show grid container
-    const jsonResponse = JSON.stringify(data.json_response, null, 2); // Format the 'json_response' part of JSON data
+    document.getElementById('grid-container').style.display = 'grid'; 
+    const jsonResponse = JSON.stringify(data.json_response, null, 2); 
     
+    // Convert escaped characters and apply formatting
     let formattedResponse = jsonResponse
         .replace(/\\n/g, '<br>') 
-        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        .replace(/\\"/g, '"') 
+        .replace(/\\\\/g, '\\') 
+        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>'); 
 
-    document.getElementById('responseData').innerHTML = formattedResponse; 
+    document.getElementById('responseData').innerHTML = formattedResponse;
 
     // Plotting the price comparison graph
     const priceTrace1 = {
