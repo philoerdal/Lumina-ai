@@ -19,10 +19,15 @@ function adjustDateTime(input) {
 function validateEndTime() {
     const startTimeInput = document.getElementById('startTime');
     const endTimeInput = document.getElementById('endTime');
+
     if (startTimeInput.value) {
         let startTime = new Date(startTimeInput.value);
-        startTime.setDate(startTime.getDate() + 1);
-        endTimeInput.min = startTime.toISOString().slice(0, 10);
+
+        let minEndTime = new Date(startTime);
+        minEndTime.setDate(startTime.getDate() + 1);
+        endTimeInput.min = minEndTime.toISOString().slice(0, 10);
+
+        endTimeInput.max = minEndTime.toISOString().slice(0, 10);
     }
 }
 
