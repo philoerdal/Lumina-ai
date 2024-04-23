@@ -37,7 +37,12 @@ function displayResponse(data) {
     console.log('Success:', data);
     document.getElementById('grid-container').style.display = 'grid'; // Show grid container
     const jsonResponse = JSON.stringify(data.json_response, null, 2); // Format the 'json_response' part of JSON data
-    document.getElementById('responseData').textContent = jsonResponse; // Display formatted 'json_response' in 'responseData' element
+    
+    let formattedResponse = jsonResponse
+        .replace(/\\n/g, '<br>') 
+        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+    document.getElementById('responseData').innerHTML = formattedResponse; 
 
     // Plotting the price comparison graph
     const priceTrace1 = {
@@ -115,9 +120,6 @@ function displayResponse(data) {
     Plotly.newPlot('plotArea3', [costTrace], costLayout);
 }
 
-
-
-
 function submitData() {
     const formData = new FormData(form);
     const searchParams = new URLSearchParams();
@@ -138,7 +140,7 @@ function submitData() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.json(); // Assuming the response is in JSON format
+        return response.json(); 
     })
     .then(data => {
         // Response handling code remains unchanged
