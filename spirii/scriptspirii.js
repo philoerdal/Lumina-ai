@@ -42,15 +42,17 @@ function displayResponse(data) {
     console.log('Success:', data);
     document.getElementById('grid-container').style.display = 'grid'; 
     const jsonResponse = JSON.stringify(data.json_response, null, 2); 
-    
-    // Convert escaped characters and apply formatting
+
     let formattedResponse = jsonResponse
         .replace(/\\n/g, '<br>') 
-        .replace(/\\"/g, '"') 
-        .replace(/\\\\/g, '\\') 
+        .replace(/\\\"/g, '"') 
+        .replace(/\\\\/g, '') 
+        .replace(/\\\//g, '/')
         .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>'); 
 
-    document.getElementById('responseData').innerHTML = formattedResponse;
+    formattedResponse = formattedResponse.replace(/\\/g, '');
+
+    document.getElementById('responseData').innerHTML = formattedResponse; 
 
     // Plotting the price comparison graph
     const priceTrace1 = {
