@@ -45,14 +45,16 @@ function displayResponse(data) {
 
     let formattedResponse = jsonResponse
         .replace(/\\n/g, '<br>') 
-        .replace(/\\\"/g, '"') 
+        .replace(/\\\"/g, '"')
         .replace(/\\\\/g, '') 
-        .replace(/\\\//g, '/')
+        .replace(/\\\//g, '/') 
         .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>'); 
 
     formattedResponse = formattedResponse.replace(/\\/g, '');
 
-    document.getElementById('responseData').innerHTML = formattedResponse; 
+    formattedResponse = formattedResponse.replace(/^"+|"+$/g, '');
+
+    document.getElementById('responseData').innerHTML = formattedResponse;
 
     // Plotting the price comparison graph
     const priceTrace1 = {
